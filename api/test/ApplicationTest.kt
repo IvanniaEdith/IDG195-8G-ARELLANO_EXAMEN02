@@ -19,7 +19,6 @@ class ApplicationTest {
         withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "/ventas").apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("bolsas = 1, goma = 5 ", response.content)
             }
         }
     }
@@ -29,7 +28,6 @@ class ApplicationTest {
         withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "/productos").apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals("bolsas, goma", response.content)
             }
         }
     }
